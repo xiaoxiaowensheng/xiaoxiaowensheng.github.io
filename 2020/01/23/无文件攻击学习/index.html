@@ -17,21 +17,30 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>安全分析 | Hait`s Blog</title>
-  <meta name="description" content="威胁分析业务部">
+  <title>无文件攻击学习 | Hait`s Blog</title>
+  <meta name="description" content="无文件攻击学习无文件攻击介绍“无文件攻击”是指恶意程序文件没有直接落地到目标系统的磁盘空间的攻击手法，一般情况下，“无文件攻击”会把攻击载荷直接载入到内存空间中执行，或者依附于合法的系统进程来进行恶意操作。  “无文件攻击”的发展“无文件攻击”起源完全驻留在内存中的恶意代码在21世纪前就已经出现，无需落地在目标的磁盘 • 2001年，红色代码事件才将“无文件恶意软件”一次带给公众 • 2003年，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安全分析">
-<meta property="og:url" content="https://xiaoxiaowensheng.github.io/2020/01/22/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90/index.html">
+<meta property="og:title" content="无文件攻击学习">
+<meta property="og:url" content="https://xiaoxiaowensheng.github.io/2020/01/23/%E6%97%A0%E6%96%87%E4%BB%B6%E6%94%BB%E5%87%BB%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="hait&#96;blogs">
-<meta property="og:description" content="威胁分析业务部">
+<meta property="og:description" content="无文件攻击学习无文件攻击介绍“无文件攻击”是指恶意程序文件没有直接落地到目标系统的磁盘空间的攻击手法，一般情况下，“无文件攻击”会把攻击载荷直接载入到内存空间中执行，或者依附于合法的系统进程来进行恶意操作。  “无文件攻击”的发展“无文件攻击”起源完全驻留在内存中的恶意代码在21世纪前就已经出现，无需落地在目标的磁盘 • 2001年，红色代码事件才将“无文件恶意软件”一次带给公众 • 2003年，">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-21T19:43:28.000Z">
-<meta property="article:modified_time" content="2020-01-21T19:45:29.864Z">
+<meta property="og:image" content="https://xiaoxiaowensheng.github.io/media/cc0f41df9e31861e97d3cb53faf56f72.png">
+<meta property="og:image" content="https://xiaoxiaowensheng.github.io/media/ebbadb552b46e020162e1f40e0992cd6.png">
+<meta property="og:image" content="https://xiaoxiaowensheng.github.io/media/9c8bb96d245ddbd813d2db8be3c3765a.png">
+<meta property="og:image" content="https://xiaoxiaowensheng.github.io/media/552f4dc281d2791c0bcbc9de4029035c.png">
+<meta property="og:image" content="https://xiaoxiaowensheng.github.io/media/6a4ceddae1ff7978ddaf13ef1f13de9c.png">
+<meta property="og:image" content="https://xiaoxiaowensheng.github.io/media/d0f15c9765740dc4a1d9c2185327cd4e.png">
+<meta property="og:image" content="https://xiaoxiaowensheng.github.io/media/8a956236e2d2a621c270e9965abafa5d.png">
+<meta property="og:image" content="https://xiaoxiaowensheng.github.io/media/8373769c1ed62bad0dcd32bd47a96a9b.png">
+<meta property="og:image" content="https://xiaoxiaowensheng.github.io/media/dce8d713c61f1d2e914ee120c460dfc8.png">
+<meta property="article:published_time" content="2020-01-23T02:52:54.292Z">
+<meta property="article:modified_time" content="2020-01-23T02:53:40.346Z">
 <meta property="article:author" content="hait jia">
-<meta property="article:tag" content="安全分析">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiaoxiaowensheng.github.io/media/cc0f41df9e31861e97d3cb53faf56f72.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://xiaoxiaowensheng.github.io/2020/01/22/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90/index.html">
+  <link rel="canonical" href="https://xiaoxiaowensheng.github.io/2020/01/23/%E6%97%A0%E6%96%87%E4%BB%B6%E6%94%BB%E5%87%BB%E5%AD%A6%E4%B9%A0/index.html">
   
     <link rel="alternate" href="/atom.xml" title="hait`blogs" type="application/atom+xml">
   
@@ -311,14 +320,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-安全分析" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-无文件攻击学习" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      安全分析
+      无文件攻击学习
     </h1>
   
 
@@ -326,27 +335,61 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/01/22/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90/" class="article-date">
-	  <time datetime="2020-01-21T19:43:28.000Z" itemprop="datePublished">2020-01-22</time>
+	<a href="/2020/01/23/%E6%97%A0%E6%96%87%E4%BB%B6%E6%94%BB%E5%87%BB%E5%AD%A6%E4%B9%A0/" class="article-date">
+	  <time datetime="2020-01-23T02:52:54.292Z" itemprop="datePublished">2020-01-23</time>
 	</a>
 </span>
         
         
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90/" rel="tag">安全分析</a>
-  </span>
-
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/01/22/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/01/23/%E6%97%A0%E6%96%87%E4%BB%B6%E6%94%BB%E5%87%BB%E5%AD%A6%E4%B9%A0/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>威胁分析业务部</p>
+        <h1 id="无文件攻击学习"><a href="#无文件攻击学习" class="headerlink" title="无文件攻击学习"></a>无文件攻击学习</h1><h2 id="无文件攻击介绍"><a href="#无文件攻击介绍" class="headerlink" title="无文件攻击介绍"></a>无文件攻击介绍</h2><p>“无文件攻击”是指恶意程序文件没有直接落地到目标系统的磁盘空间的攻击手法，一般情况下，“无文件攻击”会把攻击载荷直接载入到内存空间中执行，或者依附于合法的系统进程来进行恶意操作。</p>
+<p><img src="/media/cc0f41df9e31861e97d3cb53faf56f72.png" alt=""></p>
+<h2 id="“无文件攻击”的发展"><a href="#“无文件攻击”的发展" class="headerlink" title="“无文件攻击”的发展"></a>“无文件攻击”的发展</h2><h3 id="“无文件攻击”起源"><a href="#“无文件攻击”起源" class="headerlink" title="“无文件攻击”起源"></a>“无文件攻击”起源</h3><p>完全驻留在内存中的恶意代码在21世纪前就已经出现，无需落地在目标的磁盘</p>
+<p>• 2001年，红色代码事件才将“无文件恶意软件”一次带给公众</p>
+<p>• 2003年，Slammer蠕虫是另一个经典的“无文件恶意软件”实例</p>
+<h3 id="现代“无文件攻击”的异同"><a href="#现代“无文件攻击”的异同" class="headerlink" title="现代“无文件攻击”的异同"></a>现代“无文件攻击”的异同</h3><p>现代的“无文件攻击”大多是基于<strong>Powershell</strong>的</p>
+<p>• 整个攻击链、攻击步骤完全无文件</p>
+<p>• 恶意代码依附于可信的系统进程，也称为“无文件攻击”</p>
+<p>• “无文件攻击”极其善于躲避检测、对抗杀软</p>
+<p><img src="/media/ebbadb552b46e020162e1f40e0992cd6.png" alt=""></p>
+<h2 id="常见“无文件”攻击技术解析"><a href="#常见“无文件”攻击技术解析" class="headerlink" title="常见“无文件”攻击技术解析"></a>常见“无文件”攻击技术解析</h2><p><img src="/media/9c8bb96d245ddbd813d2db8be3c3765a.png" alt=""></p>
+<p><a href="https://www.jianshu.com/p/cb75c0d70c45" target="_blank" rel="noopener">https://www.jianshu.com/p/cb75c0d70c45</a></p>
+<h2 id="案例分析学习"><a href="#案例分析学习" class="headerlink" title="案例分析学习"></a>案例分析学习</h2><h3 id="驱动人生挖矿蠕虫攻击过程分析（powershell分析）"><a href="#驱动人生挖矿蠕虫攻击过程分析（powershell分析）" class="headerlink" title="驱动人生挖矿蠕虫攻击过程分析（powershell分析）"></a>驱动人生挖矿蠕虫攻击过程分析（powershell分析）</h3><p>趋势针对驱动人生事件介绍：</p>
+<p><a href="user_cancel">https://blog.trendmicro.com/trendlabs-security-intelligence/monero-mining-malware-pcastle-zeroes-back-in-on-china-now-uses-multilayered-fileless-arrival-techniques/</a></p>
+<p>腾讯对驱动人生介绍：</p>
+<p><a href="user_cancel">https://s.tencent.com/research/report/768.html</a></p>
+<p>mig.ps1（最初的起始powershell文件）沙箱运行：【比较详细】</p>
+<p><a href="user_cancel">https://app.any.run/tasks/8586e6bb-6236-40d0-b608-ca6e466aa022/</a></p>
+<p><img src="/media/552f4dc281d2791c0bcbc9de4029035c.png" alt=""></p>
+<p>m6pe（最终挖矿样本）沙箱运行：</p>
+<p><a href="user_cancel">http://tq.research.qianxin-inc.cn/tq/report/toViewReport.do?rid=00c9c724043ce628ce8109a3826f8f2b&amp;sk=006363</a></p>
+<p><img src="/media/6a4ceddae1ff7978ddaf13ef1f13de9c.png" alt=""></p>
+<p>使用write-host，write-output **** | out-file -filepath<br>C:\temp\a.txt替换IEX进行解密：</p>
+<p>期间混淆使用替换IEX的代码：</p>
+<p>IEX：</p>
+<p>$pSHoMe[4]+$pshomE[34]+’x’</p>
+<p>$env:coMSpEc[4,26,25]-jOiN’’</p>
+<p>$pSHomE[21]+$PSHoME[30]+’x’</p>
+<p>$sHEllid[1]+$sHElLID[13]+’x’</p>
+<p>$env:ComspeC[4,15,25]-JoIN’’</p>
+<p>(GeT-VAriaBlE ‘*Mdr*‘).NaMe[3,11,2]-JOiN’’</p>
+<p><img src="/media/d0f15c9765740dc4a1d9c2185327cd4e.png" alt=""></p>
+<p><img src="/media/8a956236e2d2a621c270e9965abafa5d.png" alt=""></p>
+<p><img src="/media/8373769c1ed62bad0dcd32bd47a96a9b.png" alt=""></p>
+<h3 id="利用WMI构建无文件后门"><a href="#利用WMI构建无文件后门" class="headerlink" title="利用WMI构建无文件后门"></a>利用WMI构建无文件后门</h3><p><a href="user_cancel">https://www.freebuf.com/column/165235.html</a></p>
+<h3 id="GhostMiner解析：无文件挖矿的新姿势"><a href="#GhostMiner解析：无文件挖矿的新姿势" class="headerlink" title="GhostMiner解析：无文件挖矿的新姿势"></a>GhostMiner解析：无文件挖矿的新姿势</h3><p><a href="user_cancel">https://www.freebuf.com/articles/blockchain-articles/170807.html</a></p>
+<h3 id="针对JS-POWMET无文件恶意软件的分析"><a href="#针对JS-POWMET无文件恶意软件的分析" class="headerlink" title="针对JS_POWMET无文件恶意软件的分析"></a>针对JS_POWMET无文件恶意软件的分析</h3><p><em><a href="https://bbs.pediy.com/thread-220646.htm" target="_blank" rel="noopener">https://bbs.pediy.com/thread-220646.htm</a></em></p>
+<h2 id="防御手段"><a href="#防御手段" class="headerlink" title="防御手段"></a>防御手段</h2><p>取证并非毫无头绪的，病毒本身必然有网络行为，内存必然有其二进制代码，它要么是单独的进程模块，要么是进程的dll/so模块，通常，为了保活，它极可能还有自己的启动项、网络心跳包。</p>
+<p><strong>流量、内存、模块、启动项。</strong></p>
+<p><img src="/media/dce8d713c61f1d2e914ee120c460dfc8.png" alt=""></p>
 
       
     </div>
@@ -356,7 +399,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://xiaoxiaowensheng.github.io/2020/01/22/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90/" title="安全分析" target="_blank" rel="external">https://xiaoxiaowensheng.github.io/2020/01/22/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90/</a>
+      <a href="https://xiaoxiaowensheng.github.io/2020/01/23/%E6%97%A0%E6%96%87%E4%BB%B6%E6%94%BB%E5%87%BB%E5%AD%A6%E4%B9%A0/" title="无文件攻击学习" target="_blank" rel="external">https://xiaoxiaowensheng.github.io/2020/01/23/%E6%97%A0%E6%96%87%E4%BB%B6%E6%94%BB%E5%87%BB%E5%AD%A6%E4%B9%A0/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -402,10 +445,10 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2020/01/23/iqy%E5%AD%A6%E4%B9%A0/" title="iqy学习"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
     
+    <li class="next">
+      <a href="/2020/01/23/iqy%E5%AD%A6%E4%B9%A0/" title="iqy学习"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
     
   </ul>
